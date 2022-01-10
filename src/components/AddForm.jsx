@@ -1,12 +1,12 @@
-import React from 'react';
+import './AddForm.css';
 
-const AddForm = ({ newTodo, setNewTodo, submit }) => {
+const AddForm = ({ newTodo, setNewTodo, handleSubmit }) => {
     return (
         <div>
-            <form onSubmit={submit}>
-                <input 
+            <form onSubmit={handleSubmit} className='form'>
+                <input className='input' 
                 type="text" 
-                placeholder="new todo" 
+                placeholder="New ToDo" 
                 value={newTodo} 
                 onChange={evt => setNewTodo(evt.target.value)} 
                 />

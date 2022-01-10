@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import AddForm from './components/AddForm';
+import { useState } from 'react';
 import Todos from './components/Todos';
+import AddForm from './components/AddForm';
+
 import './App.css';
 
 function App() {
@@ -20,25 +21,29 @@ function App() {
 		setTodos(todosCopy);
 	}
 
-	function handleDelete(toDelete) {
-		const filteredTodos = todos.filter((todo) => todo != toDelete);
-		setTodos(filteredTodos);
-	}
+	// function handleDelete(toDelete) {
+	// 	const filteredTodos = todos.filter((todo) => todo != toDelete);
+	// 	setTodos(filteredTodos);
+	// }
 
   return (
-    <div className="App">
-      <AddForm 
-        newTodo={newTodo}
-        setNewTodo={setNewTodo}
-        submit={handleSubmit} 
-      />
-      <Todos 
-        todos={todos}
-        update={handleUpdate}
-        delete={handleDelete}
-      />
-    </div>
-  );
-}
+		
+			<div className='App'>
+				<h1>To-Do</h1>
+        <AddForm 
+          newTodo={newTodo}
+          setNewTodo={setNewTodo}
+          handleSubmit={handleSubmit}
+        />
+        <Todos 
+          todos={todos}
+          setTodos={setTodos}
+          handleUpdate={handleUpdate}
+          // handleDelete={handleDelete}
+        />
+			</div>
+		
+	);
+};
 
 export default App;

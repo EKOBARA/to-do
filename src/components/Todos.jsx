@@ -1,6 +1,6 @@
 import Todo from "./todo/Todo";
 
-const Todos = () => {
+const Todos = ( {todos, handleUpdate, handleDelete }) => {
     return (
         <div>
             <table>
